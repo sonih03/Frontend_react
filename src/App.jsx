@@ -10,6 +10,15 @@ const scores = [
   { 이름: "Asher",국어: 90, 영어: 90, 수학: 80, 과학: 90},
   { 이름: "Edward",국어: 90, 영어: 90, 수학: 80, 과학: 90},
 ]
+
+const sources = [0,1,2,3]
+tmp = []
+for (let item of source){
+  tmp.push(item*2)
+}
+
+sources.map(item => (item*2))
+
 // let numbers = [0,1,2,3]//데이터가 변형을 해야하기 때문에 let을 사용
 
 // let newScores= numbers.map(item => {return item*2})
