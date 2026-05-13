@@ -11,13 +11,13 @@ const scores = [
   { 이름: "Edward",국어: 90, 영어: 90, 수학: 80, 과학: 90},
 ]
 
-const sources = [0,1,2,3]
-tmp = []
-for (let item of source){
-  tmp.push(item*2)
-}
+// const sources = [0,1,2,3]
+// tmp = []
+// for (let item of source){
+//   tmp.push(item*2)
+// }
 
-sources.map(item => (item*2))
+// sources.map(item => (item*2))
 
 // let numbers = [0,1,2,3]//데이터가 변형을 해야하기 때문에 let을 사용
 
@@ -30,21 +30,26 @@ function App() {
     <table>
       
       <tr>
-        <th>이름</th>
+        {
+          Object.keys(scores[0]).map(key => (
+            <th>{key}</th>
+          ))
+        }
+        {/* <th>이름</th>
         <th>국어</th>
         <th>영어</th>
         <th>수학</th>
-        <th>과학</th>
+        <th>과학</th> */}
       </tr>
-      {[0,1,2,3].map(idx => 
+      {scores.map(item => 
       (
-         <tr>
-         <td>{scores[idx].이름}</td>
-         <td>{scores[idx].국어}</td>
-         <td>{scores[idx].영어}</td>
-         <td>{scores[idx].수학}</td>
-         <td>{scores[idx].과학}</td>
-       </tr>
+        <tr>
+          {
+            Object.values(item).map(
+              values => (<td>{values}</td>)
+            )
+          }
+        </tr>
     ))}
 
     </table>
