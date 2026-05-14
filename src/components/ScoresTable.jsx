@@ -1,13 +1,8 @@
 import React from 'react'
 
-const scores = [
-  { 이름: "John",국어: 90, 영어: 90, 수학: 80, 과학: 90},
-  { 이름: "Nick",국어: 90, 영어: 90, 수학: 80, 과학: 90},
-  { 이름: "Asher",국어: 90, 영어: 90, 수학: 80, 과학: 90},
-  { 이름: "Edward",국어: 90, 영어: 90, 수학: 80, 과학: 90},
-]
 
-function ScoresTable() {
+
+function ScoresTable({scores}) {
   return (
      <table>
       
