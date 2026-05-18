@@ -1,33 +1,23 @@
-import './App.css'
-import { useState } from 'react'
-import ScoresTable from './components/ScoresTable'
-import Form from './components/Form';
+import './App.css'// component는 대문자, 파일은 소문자
+import ScorePage from './pages/ScorePage';// .으로 한 칸 올라가서 src안에 페이지 안에 스코어페이지 접근
+import UserPage from './pages/UserPage';
+import EmployeePage from './pages/EmployeePage';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import HeaderBar from './components/HeaderBar';
 
-const intialScores = [ 
-  {  이름: "John", 국어: 90, 영어: 90,  수학: 80, 과학: 90 },
-  {  이름: "Peter", 국어: 90, 영어: 90,  수학: 80, 과학: 90 },
-  {  이름: "Susan", 국어: 90, 영어: 90,  수학: 80, 과학: 90 },
-  {  이름: "Sue", 국어: 90, 영어: 90,  수학: 80, 과학: 90 },
-]
 
-const initialInfo = {
-   이름: "", 
-   국어: null,
-   영어: null,
-   수학: null,
-   과학: null,
-}
 
 function App() {
-
-  const [info, setInfo] = useState(initialInfo);
-  const [scores, setScores] = useState(intialScores);
+  
   return (
-    <>
-      <ScoresTable scores={scores}/>
-      <Form info={info} setInfo={setInfo} setScores={setScores}/>
-
-    </>
+    <BrowserRouter>
+      <HeaderBar/>
+      <Routes>
+        <Route path="/score" element={<ScorePage/>}/>//안에 score의 역할이 뭐라 검색해야 그 페이지로 이동하는지 결정함
+        <Route path="/user" element={<UserPage/>}/>
+        <Route path="/employee" element={<EmployeePage/>}/>
+      </Routes>
+    </BrowserRouter>
     
   )
 }

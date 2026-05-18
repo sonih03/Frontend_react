@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+console.log("Hello ScoresTable")
 
 function ScoresTable({scores}) {
   return (
